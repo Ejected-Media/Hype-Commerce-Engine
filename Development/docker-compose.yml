@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  api:
+    build: .
+    ports: ["8000:8000"]
+    environment:
+      - REDIS_HOST=cache
+      - FIRESTORE_EMULATOR_HOST=db:8080
+  cache:
+    image: redis:7-alpine
+  db:
+    image: google/cloud-sdk:emulators
+    command: gcloud beta emulators firestore start --host-port=0.0.0.0:8080
+    
