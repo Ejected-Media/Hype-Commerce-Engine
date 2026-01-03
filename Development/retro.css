@@ -1,0 +1,20 @@
+/* Phase 2: The Retro Toolkit */
+.retro-box {
+    background: silver;
+    border: 3px outset #fff;
+    padding: 10px;
+    font-family: "Courier New", monospace;
+}
+
+.retro-blink { animation: blinker 1s linear infinite; }
+@keyframes blinker { 50% { opacity: 0; } }
+
+marquee {
+    background: #000;
+    color: #0f0;
+    border: 2px inset #fff;
+}
+
+.shipping-bar {
+    width: 100%; height: 20px; background: #eee; border: 2px inset #fff; position: relative;
+}
