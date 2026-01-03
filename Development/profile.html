@@ -1,0 +1,13 @@
+<div x-data="{ layout: [] }" x-init="layout = await (await fetch('/api/profile/123')).json()">
+    <template x-for="item in layout">
+        <div>
+            <template x-if="item.type === 'marquee'">
+                <marquee :scrollamount="item.scrollSpeed" x-text="item.content"></marquee>
+            </template>
+            
+            <template x-if="item.type === 'blink_text'">
+                <div class="retro-blink" :style="{ fontSize: item.fontSize }" x-text="item.content"></div>
+            </template>
+        </div>
+    </template>
+</div>
